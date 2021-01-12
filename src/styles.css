@@ -1,0 +1,20 @@
+:root {
+  --text-color: #d1d5db;
+  --background-color: #22d3ee;
+  --primary-color: #a5f3fc;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.input-text {
+  width: 80%;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+.btn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 0px;
+  background-color: var(--background-color);
+}
