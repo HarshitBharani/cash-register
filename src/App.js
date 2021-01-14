@@ -11,30 +11,36 @@ export default function App() {
   var outputArray = [
     {
       note: 2000,
-      no: 0
+      no: 0,
+      className: "offwhite"
     },
     {
       note: 500,
-      no: 0
+      no: 0,
+      className: "white"
     },
-    { note: 200, no: 0 },
+    { note: 200, no: 0, className: "offwhite" },
     {
       note: 100,
-      no: 0
+      no: 0,
+      className: "white"
     },
-    { note: 50, no: 0 },
+    { note: 50, no: 0, className: "offwhite" },
     {
       note: 20,
-      no: 0
+      no: 0,
+      className: "white"
     },
-    { note: 10, no: 0 },
+    { note: 10, no: 0, className: "offwhite" },
     {
       note: 5,
-      no: 0
+      no: 0,
+      className: "white"
     },
     {
       note: 1,
-      no: 0
+      no: 0,
+      className: "offwhite"
     }
   ];
 
@@ -59,9 +65,8 @@ export default function App() {
     setListItem(
       outputArray.map((noteobj) => {
         return (
-          <li>
-            {" "}
-            {noteobj.note} : {noteobj.no}
+          <li className={noteobj.className}>
+            {noteobj.note}: {noteobj.no}
           </li>
         );
       })
@@ -87,7 +92,7 @@ export default function App() {
       <button className="btn" onClick={() => onClickhandler()}>
         calculate
       </button>
-      {listItem}
+      <ul>{listItem}</ul>
     </div>
   );
 }
