@@ -36,6 +36,14 @@ export default function App() {
       no: 0
     }
   ];
+  var listitem = outputArray.map((noteobj) => {
+    return (
+      <li>
+        {" "}
+        {noteobj.note} : {noteobj.no}
+      </li>
+    );
+  });
   function billChangeHandler(event) {
     var billChange = event.target.value;
     setBill(billChange);
@@ -73,7 +81,7 @@ export default function App() {
       <button className="btn" onClick={() => onClickhandler()}>
         calculate
       </button>
-      <ul id="render"></ul>
+      <ul>{listitem}</ul>
     </div>
   );
 }
