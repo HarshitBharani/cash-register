@@ -3,6 +3,10 @@
   --background-color: #22d3ee;
   --primary-color: #a5f3fc;
 }
+body {
+  margin: 0px;
+  padding: 0px;
+}
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -10,11 +14,18 @@
 .input-text {
   width: 80%;
   padding: 0.5rem;
-  margin: 1rem;
+  margin: 2rem 3rem;
+  display: block;
 }
 .btn {
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 0px;
   background-color: var(--background-color);
+}
+.nav-bar {
+  background-color: var(--background-color);
+  margin: 0%;
+  padding: 1rem;
+  font-size: 2rem;
 }

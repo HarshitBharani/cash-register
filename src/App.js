@@ -69,6 +69,9 @@ export default function App() {
   }
   return (
     <div className="App">
+      <nav>
+        <h1 className="nav-bar">Cash Register</h1>
+      </nav>
       <input
         className="input-text"
         type="number"
