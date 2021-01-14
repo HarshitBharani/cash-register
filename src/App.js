@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function App() {
   var [bill, setBill] = useState("");
   var [cashGiven, setCashGiven] = useState("");
+  var [listItem, setListItem] = useState([]);
   var renderElement = document.querySelector("#render");
   var newv = document.createElement("li");
   var outputArray = [
@@ -36,14 +37,7 @@ export default function App() {
       no: 0
     }
   ];
-  var listitem = outputArray.map((noteobj) => {
-    return (
-      <li>
-        {" "}
-        {noteobj.note} : {noteobj.no}
-      </li>
-    );
-  });
+
   function billChangeHandler(event) {
     var billChange = event.target.value;
     setBill(billChange);
@@ -60,9 +54,18 @@ export default function App() {
         outputArray[i].no = Math.floor(returnAmount / outputArray[i].note);
         returnAmount = returnAmount % outputArray[i].note;
       }
-      var newv = document.createElement("li");
-      newv.innerHTML = "hi";
     }
+
+    setListItem(
+      outputArray.map((noteobj) => {
+        return (
+          <li>
+            {" "}
+            {noteobj.note} : {noteobj.no}
+          </li>
+        );
+      })
+    );
   }
   return (
     <div className="App">
@@ -81,7 +84,7 @@ export default function App() {
       <button className="btn" onClick={() => onClickhandler()}>
         calculate
       </button>
-      <ul>{listitem}</ul>
+      {listItem}
     </div>
   );
 }
